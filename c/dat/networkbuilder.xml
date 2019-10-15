@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<Communication>
+  <Routers>
+    <Router location="Bus_1_____HV" name="Main Router" uuid="a3e883e7-efb0-477a-bfb9-090acfb8fe6d"/>
+    <Router location="Bus_2_____HV" name="Main Router" uuid="bff8e114-cfe9-4983-9335-4c298e425488"/>
+    <Router location="Bus_3_____HV" name="Main Router" uuid="c1d95c62-cc6b-4756-9a86-f1ab33700fd0"/>
+    <Router location="Bus_4_____HV" name="Main Router" uuid="5cdd65c3-6303-4109-abd3-2272a74e5e19"/>
+    <Router location="Bus_5_____HV" name="Main Router" uuid="683f5ed8-4225-43b5-aedd-d1eccaf9880d"/>
+    <Router location="Bus_6_____LV" name="Main Router" uuid="ad1b4244-b09b-475f-bf59-500788278765"/>
+    <Router location="Bus_7_____ZV" name="Main Router" uuid="451a4e12-8e14-472f-83cf-a81cae288449"/>
+    <Router location="Bus_8_____TV" name="Main Router" uuid="39e651d6-db62-45eb-99ac-bb33fa5f0911"/>
+    <Router location="Bus_9_____LV" name="Main Router" uuid="6ab79295-8c11-4132-98c0-498f90f208b4"/>
+    <Router location="Bus_10____LV" name="Main Router" uuid="ea8e45fa-9cca-48f0-a827-fa2ac7ea6adc"/>
+    <Router location="Bus_11____LV" name="Main Router" uuid="238740c3-157d-48fd-974a-15d7e769c338"/>
+    <Router location="Bus_12____LV" name="Main Router" uuid="e9f5a6cc-cfaf-4304-8715-b1b391e6a7a9"/>
+    <Router location="Bus_13____LV" name="Main Router" uuid="f33b6c52-f4a6-4683-95d7-d1a8ec99f4ae"/>
+    <Router location="Bus_14____LV" name="Main Router" uuid="ee51364b-bdb2-4110-9fb7-1c91c64d2f77"/>
+  </Routers>
+  <Switches>
+    <Switch ap="a3e883e7-efb0-477a-bfb9-090acfb8fe6d" name="S1" uuid="002f9e38-e354-4054-87e7-3cb200d0e779"/>
+    <Switch ap="a3e883e7-efb0-477a-bfb9-090acfb8fe6d" name="S2" uuid="fc0d64e0-ae72-4038-b188-b3c10a7daba5"/>
+    <Switch ap="bff8e114-cfe9-4983-9335-4c298e425488" name="S1" uuid="db2696ad-5c68-456f-83a0-4ac80a2ca857"/>
+    <Switch ap="bff8e114-cfe9-4983-9335-4c298e425488" name="S2" uuid="f08676c2-e119-4247-8dad-ce2c5d6914c6"/>
+    <Switch ap="c1d95c62-cc6b-4756-9a86-f1ab33700fd0" name="S1" uuid="1c51fe61-da1f-44f1-9df5-28a5385023a4"/>
+    <Switch ap="c1d95c62-cc6b-4756-9a86-f1ab33700fd0" name="S2" uuid="340c1486-b8ab-450c-bae2-78090851a669"/>
+    <Switch ap="5cdd65c3-6303-4109-abd3-2272a74e5e19" name="S1" uuid="1e459360-f5bf-4eb6-b70a-0c4db0ad8d3b"/>
+    <Switch ap="5cdd65c3-6303-4109-abd3-2272a74e5e19" name="S2" uuid="4b041dfc-b890-4ad9-9e81-043fc269f5a8"/>
+    <Switch ap="683f5ed8-4225-43b5-aedd-d1eccaf9880d" name="S1" uuid="aac28bd9-9783-4004-be49-85bec2ff309a"/>
+    <Switch ap="683f5ed8-4225-43b5-aedd-d1eccaf9880d" name="S2" uuid="01d86a36-6328-44d0-b260-d86177760716"/>
+    <Switch ap="ad1b4244-b09b-475f-bf59-500788278765" name="S1" uuid="e114682e-dc28-4c88-b3b5-dc2da88d7aec"/>
+    <Switch ap="ad1b4244-b09b-475f-bf59-500788278765" name="S2" uuid="f30f501b-9ff0-4a12-ad12-afe927933713"/>
+    <Switch ap="451a4e12-8e14-472f-83cf-a81cae288449" name="S1" uuid="20954e44-f141-46f6-ab0d-4898f1460c9d"/>
+    <Switch ap="451a4e12-8e14-472f-83cf-a81cae288449" name="S2" uuid="9c6cb190-0ffb-4155-9aad-4250c640e615"/>
+    <Switch ap="39e651d6-db62-45eb-99ac-bb33fa5f0911" name="S1" uuid="825650be-0058-4a4f-bc95-e932fe98c5fd"/>
+    <Switch ap="39e651d6-db62-45eb-99ac-bb33fa5f0911" name="S2" uuid="9f3a5c41-2a4a-425e-a3c7-fa9582603ea5"/>
+    <Switch ap="6ab79295-8c11-4132-98c0-498f90f208b4" name="S1" uuid="1ac7da2c-fd14-4944-a3b0-2275a214ee43"/>
+    <Switch ap="6ab79295-8c11-4132-98c0-498f90f208b4" name="S2" uuid="8274a890-9e50-4a57-94c5-2f7f5a292d9d"/>
+    <Switch ap="ea8e45fa-9cca-48f0-a827-fa2ac7ea6adc" name="S1" uuid="1061c576-a26b-4c4c-be65-3d8c6c8b7579"/>
+    <Switch ap="ea8e45fa-9cca-48f0-a827-fa2ac7ea6adc" name="S2" uuid="a93ffaf3-255e-4368-917a-f68764109745"/>
+    <Switch ap="238740c3-157d-48fd-974a-15d7e769c338" name="S1" uuid="e64e5d73-b3fc-4a4c-847b-2a03199ced04"/>
+    <Switch ap="238740c3-157d-48fd-974a-15d7e769c338" name="S2" uuid="18588d2f-d5af-4059-afbd-1576295816bb"/>
+    <Switch ap="e9f5a6cc-cfaf-4304-8715-b1b391e6a7a9" name="S1" uuid="35452f1f-4244-453d-9623-6624814f4169"/>
+    <Switch ap="e9f5a6cc-cfaf-4304-8715-b1b391e6a7a9" name="S2" uuid="c16548fc-164e-441d-9af2-747939479d22"/>
+    <Switch ap="f33b6c52-f4a6-4683-95d7-d1a8ec99f4ae" name="S1" uuid="3fc41ba5-2ed2-4539-84d0-6c5266352aba"/>
+    <Switch ap="f33b6c52-f4a6-4683-95d7-d1a8ec99f4ae" name="S2" uuid="a64d4e5c-2b1e-4d19-be06-9ec65b7a6162"/>
+    <Switch ap="ee51364b-bdb2-4110-9fb7-1c91c64d2f77" name="S1" uuid="82c96270-e828-4111-b202-92b1828afc2a"/>
+    <Switch ap="ee51364b-bdb2-4110-9fb7-1c91c64d2f77" name="S2" uuid="df2482db-7746-4b55-8691-128942b512f0"/>
+  </Switches>
+  <Hosts>
+    <Host ap="002f9e38-e354-4054-87e7-3cb200d0e779" name="Engineer Workstation" uuid="7f045f96-fa64-4448-a49d-e28e9c11a46f"/>
+    <Host ap="db2696ad-5c68-456f-83a0-4ac80a2ca857" name="Engineer Workstation" uuid="6698d21f-11f4-4e9c-8c39-a7edc51601dd"/>
+    <Host ap="1c51fe61-da1f-44f1-9df5-28a5385023a4" name="Engineer Workstation" uuid="1720203f-eb92-469f-a731-e3693b599908"/>
+    <Host ap="1e459360-f5bf-4eb6-b70a-0c4db0ad8d3b" name="Engineer Workstation" uuid="57b7bad4-afd8-456d-a2f2-8f37727254fb"/>
+    <Host ap="aac28bd9-9783-4004-be49-85bec2ff309a" name="Engineer Workstation" uuid="218afca7-29ef-4c4c-9b6d-bbb0052f195e"/>
+    <Host ap="e114682e-dc28-4c88-b3b5-dc2da88d7aec" name="Engineer Workstation" uuid="ef96ecf4-f9a8-494c-8310-e0e8934e7aad"/>
+    <Host ap="20954e44-f141-46f6-ab0d-4898f1460c9d" name="Engineer Workstation" uuid="94599ab9-74b5-407e-8f57-13bca1e8e517"/>
+    <Host ap="825650be-0058-4a4f-bc95-e932fe98c5fd" name="Engineer Workstation" uuid="7fddd0bb-5f27-44e8-a585-d13d9cf51e9c"/>
+    <Host ap="1ac7da2c-fd14-4944-a3b0-2275a214ee43" name="Engineer Workstation" uuid="ab925a60-b9f8-46b7-8f07-d1478dadb51e"/>
+    <Host ap="1061c576-a26b-4c4c-be65-3d8c6c8b7579" name="Engineer Workstation" uuid="be608780-b489-4c82-a3db-1ec17debcec3"/>
+    <Host ap="e64e5d73-b3fc-4a4c-847b-2a03199ced04" name="Engineer Workstation" uuid="9ab2e0a2-c584-4381-858d-200682c2c1c2"/>
+    <Host ap="35452f1f-4244-453d-9623-6624814f4169" name="Engineer Workstation" uuid="89ce7ffc-6d20-4b60-891f-145bf86ca706"/>
+    <Host ap="3fc41ba5-2ed2-4539-84d0-6c5266352aba" name="Engineer Workstation" uuid="fec42ff9-7cbf-45f3-98d2-1c1a09ebff18"/>
+    <Host ap="82c96270-e828-4111-b202-92b1828afc2a" name="Engineer Workstation" uuid="a9ab8aa8-9862-499b-af57-5135fbd71105"/>
+    <Host ap="002f9e38-e354-4054-87e7-3cb200d0e779" name="Control Server" uuid="ffa7adbd-6d83-4acd-a33a-91df05b1a6e9"/>
+    <Host ap="db2696ad-5c68-456f-83a0-4ac80a2ca857" name="Control Server" uuid="68e78b65-fbad-4b94-a6cd-a996bd1d9da9"/>
+    <Host ap="1c51fe61-da1f-44f1-9df5-28a5385023a4" name="Control Server" uuid="724bc6a1-7e87-4f5c-86e4-80d12b4845e7"/>
+    <Host ap="1e459360-f5bf-4eb6-b70a-0c4db0ad8d3b" name="Control Server" uuid="bc61f3ce-528a-4629-b228-5c9d540e87d2"/>
+    <Host ap="aac28bd9-9783-4004-be49-85bec2ff309a" name="Control Server" uuid="f6646acf-1213-4f79-a7e2-9fa9914dcf45"/>
+    <Host ap="e114682e-dc28-4c88-b3b5-dc2da88d7aec" name="Control Server" uuid="dde6e0bd-4949-49b6-b176-1b93a400d16b"/>
+    <Host ap="20954e44-f141-46f6-ab0d-4898f1460c9d" name="Control Server" uuid="2c09ca29-a62a-4682-a55b-852393d93889"/>
+    <Host ap="825650be-0058-4a4f-bc95-e932fe98c5fd" name="Control Server" uuid="4a77fa45-523a-458b-a97e-4a12df3c271b"/>
+    <Host ap="1ac7da2c-fd14-4944-a3b0-2275a214ee43" name="Control Server" uuid="071eb982-d1f6-4fa4-a356-db041d7121ab"/>
+    <Host ap="1061c576-a26b-4c4c-be65-3d8c6c8b7579" name="Control Server" uuid="225655a2-df0e-4797-8b35-4a3e2a475830"/>
+    <Host ap="e64e5d73-b3fc-4a4c-847b-2a03199ced04" name="Control Server" uuid="c33bb3e0-6792-4daa-a17f-5efbcdd2c2fb"/>
+    <Host ap="35452f1f-4244-453d-9623-6624814f4169" name="Control Server" uuid="9aa1d502-460b-486c-b90d-f68dc5f16706"/>
+    <Host ap="3fc41ba5-2ed2-4539-84d0-6c5266352aba" name="Control Server" uuid="f8ed45e7-ee2c-4e1b-b3a7-6e0a860422fc"/>
+    <Host ap="82c96270-e828-4111-b202-92b1828afc2a" name="Control Server" uuid="95728f2f-4fe6-4f7b-aa7e-b4eba7af5ead"/>
+  </Hosts>
+  <IEDs>
+    <Relay ap="fc0d64e0-ae72-4038-b188-b3c10a7daba5" farend="None" name="Relay 001-002" nearend="None" uuid="b164ec9c-1dc4-457f-b5e4-c40048e903f6"/>
+    <Relay ap="fc0d64e0-ae72-4038-b188-b3c10a7daba5" farend="None" name="Relay 001-005" nearend="None" uuid="02fc9e9a-f188-4f16-bbb1-75147965fc9f"/>
+    <Relay ap="f08676c2-e119-4247-8dad-ce2c5d6914c6" farend="None" name="Relay 001-002" nearend="None" uuid="e829e736-0d5a-4e4f-bab8-f0725e3f783b"/>
+    <Relay ap="f08676c2-e119-4247-8dad-ce2c5d6914c6" farend="None" name="Relay 002-003" nearend="None" uuid="e27e492d-926f-4675-9a0c-5da50a2ff922"/>
+    <Relay ap="f08676c2-e119-4247-8dad-ce2c5d6914c6" farend="None" name="Relay 002-004" nearend="None" uuid="3dfefa49-92db-4820-9d3e-6d20e4cb2aee"/>
+    <Relay ap="f08676c2-e119-4247-8dad-ce2c5d6914c6" farend="None" name="Relay 002-005" nearend="None" uuid="054c8eb8-a555-42a9-b612-1e598d8353b9"/>
+    <Relay ap="340c1486-b8ab-450c-bae2-78090851a669" farend="None" name="Relay 002-003" nearend="None" uuid="58eed020-1ecd-425f-80ad-ad4e2e450f6d"/>
+    <Relay ap="340c1486-b8ab-450c-bae2-78090851a669" farend="None" name="Relay 003-004" nearend="None" uuid="38467532-53b6-4bf2-a90e-632f1f056a12"/>
+    <Relay ap="4b041dfc-b890-4ad9-9e81-043fc269f5a8" farend="None" name="Relay 002-004" nearend="None" uuid="cd5dd908-cb1c-4293-a7fc-290ea4d412aa"/>
+    <Relay ap="4b041dfc-b890-4ad9-9e81-043fc269f5a8" farend="None" name="Relay 003-004" nearend="None" uuid="3f532bb9-ff25-4427-abb9-c487af0637f9"/>
+    <Relay ap="4b041dfc-b890-4ad9-9e81-043fc269f5a8" farend="None" name="Relay 004-005" nearend="None" uuid="87374faf-122a-4cde-886e-58effba18060"/>
+    <Relay ap="4b041dfc-b890-4ad9-9e81-043fc269f5a8" farend="None" name="Relay 004-007" nearend="None" uuid="61f81ba6-2194-4132-a3b8-da21c3d3ce2c"/>
+    <Relay ap="4b041dfc-b890-4ad9-9e81-043fc269f5a8" farend="None" name="Relay 004-009" nearend="None" uuid="a3b87c7c-dedd-4bfc-8c03-025fed4d3a84"/>
+    <Relay ap="01d86a36-6328-44d0-b260-d86177760716" farend="None" name="Relay 001-005" nearend="None" uuid="e291cc59-a578-49b7-8d66-6a2b5e9f6982"/>
+    <Relay ap="01d86a36-6328-44d0-b260-d86177760716" farend="None" name="Relay 002-005" nearend="None" uuid="0c7d518f-a87c-44c4-b579-00df50ad625d"/>
+    <Relay ap="01d86a36-6328-44d0-b260-d86177760716" farend="None" name="Relay 004-005" nearend="None" uuid="72fef653-9f0e-448e-b0ed-831011539148"/>
+    <Relay ap="01d86a36-6328-44d0-b260-d86177760716" farend="None" name="Relay 005-006" nearend="None" uuid="aea6d6b0-10af-4fc0-9d64-3f206ccdb780"/>
+    <Relay ap="f30f501b-9ff0-4a12-ad12-afe927933713" farend="None" name="Relay 005-006" nearend="None" uuid="107c5397-0bfc-4628-b2e7-84b6033ae751"/>
+    <Relay ap="f30f501b-9ff0-4a12-ad12-afe927933713" farend="None" name="Relay 006-011" nearend="None" uuid="d723798e-2057-4b75-8a59-53a91e5dc521"/>
+    <Relay ap="f30f501b-9ff0-4a12-ad12-afe927933713" farend="None" name="Relay 006-012" nearend="None" uuid="7d748ce5-b37f-45e4-b9c9-424017a94996"/>
+    <Relay ap="f30f501b-9ff0-4a12-ad12-afe927933713" farend="None" name="Relay 006-013" nearend="None" uuid="0b85e39b-b159-4a9b-8dcd-874e60b143e6"/>
+    <Relay ap="9c6cb190-0ffb-4155-9aad-4250c640e615" farend="None" name="Relay 004-007" nearend="None" uuid="81af565a-77ab-403c-9820-32fb053d171f"/>
+    <Relay ap="9c6cb190-0ffb-4155-9aad-4250c640e615" farend="None" name="Relay 007-008" nearend="None" uuid="3d8192e5-5d0c-4423-a1ef-1ea766babc76"/>
+    <Relay ap="9c6cb190-0ffb-4155-9aad-4250c640e615" farend="None" name="Relay 007-009" nearend="None" uuid="220e39b5-ee89-40ee-95c0-9b123195b298"/>
+    <Relay ap="9f3a5c41-2a4a-425e-a3c7-fa9582603ea5" farend="None" name="Relay 007-008" nearend="None" uuid="90efe37d-5f4f-4b6c-9a92-f89aa52ddcc4"/>
+    <Relay ap="8274a890-9e50-4a57-94c5-2f7f5a292d9d" farend="None" name="Relay 004-009" nearend="None" uuid="d7db9aa2-0ed4-4bb9-984e-feeeafbad632"/>
+    <Relay ap="8274a890-9e50-4a57-94c5-2f7f5a292d9d" farend="None" name="Relay 007-009" nearend="None" uuid="7bbef7a1-cc8a-487d-a193-b0fa1e7278d7"/>
+    <Relay ap="8274a890-9e50-4a57-94c5-2f7f5a292d9d" farend="None" name="Relay 009-010" nearend="None" uuid="d2ab258d-e3f0-4157-ad17-3cb51253d3e5"/>
+    <Relay ap="8274a890-9e50-4a57-94c5-2f7f5a292d9d" farend="None" name="Relay 009-014" nearend="None" uuid="b1ba877e-abe5-4d0d-99a9-d840d0a4fb2c"/>
+    <Relay ap="a93ffaf3-255e-4368-917a-f68764109745" farend="None" name="Relay 009-010" nearend="None" uuid="a5345416-9fb1-42a0-b17f-f16adf5463e0"/>
+    <Relay ap="a93ffaf3-255e-4368-917a-f68764109745" farend="None" name="Relay 010-011" nearend="None" uuid="be28222b-718a-44fb-9a47-4d8de8bc9a8e"/>
+    <Relay ap="18588d2f-d5af-4059-afbd-1576295816bb" farend="None" name="Relay 006-011" nearend="None" uuid="cb117f6a-dccc-4cd2-bf6b-2fe2fe74575d"/>
+    <Relay ap="18588d2f-d5af-4059-afbd-1576295816bb" farend="None" name="Relay 010-011" nearend="None" uuid="afb46ecf-5ae2-4176-ab08-e7016e1320c2"/>
+    <Relay ap="c16548fc-164e-441d-9af2-747939479d22" farend="None" name="Relay 006-012" nearend="None" uuid="19481e08-e793-4c9a-a696-82ce33d48fc4"/>
+    <Relay ap="c16548fc-164e-441d-9af2-747939479d22" farend="None" name="Relay 012-013" nearend="None" uuid="a7fbbcb8-befe-4fb5-bfdb-4c106b6a965d"/>
+    <Relay ap="a64d4e5c-2b1e-4d19-be06-9ec65b7a6162" farend="None" name="Relay 006-013" nearend="None" uuid="c840f487-7771-4431-bb46-b4ce4aa68a4a"/>
+    <Relay ap="a64d4e5c-2b1e-4d19-be06-9ec65b7a6162" farend="None" name="Relay 012-013" nearend="None" uuid="11ddc1df-730f-41dc-84b7-0385ec7da806"/>
+    <Relay ap="a64d4e5c-2b1e-4d19-be06-9ec65b7a6162" farend="None" name="Relay 013-014" nearend="None" uuid="cfb6de17-aa54-462a-8966-fa2375ab6d46"/>
+    <Relay ap="df2482db-7746-4b55-8691-128942b512f0" farend="None" name="Relay 009-014" nearend="None" uuid="e8e1e7e3-3874-40e0-a9ce-ca8b79fa6e7e"/>
+    <Relay ap="df2482db-7746-4b55-8691-128942b512f0" farend="None" name="Relay 013-014" nearend="None" uuid="c1248948-057e-4fa4-bc58-a2036109d0f7"/>
+  </IEDs>
+</Communication>

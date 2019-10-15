@@ -83,10 +83,6 @@ class NetworkModelBuilder():
                 fbus_router = get_router_by_location(self.CommNodes, fbus_name)
                 tbus_router = get_router_by_location(self.CommNodes, tbus_name)
                 self.CommLinks.append((fbus_router, tbus_router))
-
-
-    def build(self):
-        pass
     
     def xml_serialize(self, filepath):
         # create the file structure
@@ -125,6 +121,8 @@ class NetworkModelBuilder():
         with open(filepath, 'w') as f:
             f.write(reparsed.toprettyxml(indent="  "))
 
+
+# region [Common Methods]
 def get_branches_connected_to_bus(branches, busid):
     return [b for b in branches if b[0] == busid or b[1] == busid]
 
@@ -143,11 +141,10 @@ def get_switches_by_location(nodes, busname):
     return switches
 
 def parse_ieeecdf_dat(filepath, seperators):
-    tables = [field for field in seperators]
+    tables = ['BUS DATA', 'BRANCH DATA']
     case = {table: list() for table in tables}
     with open(filepath) as f:
         r = f.readline()
-
         for table in tables:
             r = f.readline()
             if '%s FOLLOWS' %table in r:
@@ -172,7 +169,7 @@ def get_itemnum_from_header(s):
 
 def parse_entryrow(s, seperate):
     data = list()
-    if seperate:
+    if seperate is not None:
         s = s.replace('\n', '')
         MAX_COLUMN = 140
         seperate = seperate + [MAX_COLUMN]
@@ -195,6 +192,6 @@ def parse_entryrow(s, seperate):
                     data.append(int(x))
                 except:
                     data.append(str(x.replace(' ', ''))) 
-
     return data
 
+# endregion

@@ -1,12 +1,16 @@
 import xml
+import os
 from pprint import pprint
 from pdb import set_trace
 from NetworkModelBuilder import NetworkModelBuilder
+# from Ns3Simulator import Ns3Simulator
 
 import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 
+
+HOMEPATH = os.path.dirname(os.path.abspath(__file__))
 
 # region [Case: IEEE39]
 # CASE = 'IEEE39.dat'
@@ -15,19 +19,18 @@ from matplotlib.backends.backend_pdf import PdfPages
 # region [Case: WECC179]
 CASE = '179.dat'
 SEPERATORS = {
-	'BUS DATA': [0,4,17,20,23,26,33,40,49,59,67,75,83,90,98,106,114,122,127],         
-	'BRANCH DATA': [0,4,9,12,15,17,19,29,39,49,55,61,67,72,74,82,90,97,104,111,119,126]
-	}
+    'BUS DATA': [0,4,17,20,23,26,33,40,49,59,67,75,83,90,98,106,114,122,127],         
+    'BRANCH DATA': [0,4,9,12,15,17,19,29,39,49,55,61,67,72,74,82,90,97,104,111,119,126]
+    }
 # endregion
 
 # region [Case: IEEE14CDF]
-# CASE = 'ieee14cdf.txt'
-# SEPERATORS = {
-# 	'BUS DATA': [0,4,17,20,23,26,33,40,49,59,67,75,83,90,98,106,114,122],         
-# 	'BRANCH DATA': None
-# 	}
+CASE = 'ieee14cdf.txt'
+SEPERATORS = {
+    'BUS DATA': [0,4,17,20,23,26,33,40,49,59,67,75,83,90,98,106,114,122,127],         
+    'BRANCH DATA': None
+    }
 # endregion
-
 
 def visualize(filepath, links):
     g = nx.Graph()
@@ -56,14 +59,19 @@ def get_node_labels(nodes):
         labels.update({n: altname})
     return labels
 
-if __name__ == '__main__':
-	b =  NetworkModelBuilder({
-		'CasePath': './dat/%s' % CASE, 
-		'CaseFormat': 'ieeecdf', 
-		'IeeeCdfSeperators': SEPERATORS,
-		})
-		
-	b.build_comm()
-	b.xml_serialize('./etc/%s/networkbuilder.xml' %CASE.split('.')[0])
-	visualize('./etc/%s/networkmap.pdf' %CASE.split('.')[0], b.CommLinks)
-	set_trace()
+if __name__ == '__main__':    
+    b =  NetworkModelBuilder({
+        'CasePath': '%s/dat/%s' % (HOMEPATH, CASE), 
+        'CaseFormat': 'ieeecdf', 
+        'IeeeCdfSeperators': SEPERATORS,
+        })
+        
+    b.build_comm()
+    b.xml_serialize('%s/etc/%s/networkbuilder.xml' % (HOMEPATH, CASE.split('.')[0]))
+    # visualize('%s/etc/%s/networkbuilder.pdf' % (HOMEPATH, CASE.split('.')[0]), b.CommLinks)
+
+    # sim = Ns3Simulator()
+    # sim.xml_import('%s/etc/%s/networkbuilder.xml' % (HOMEPATH, CASE.split('.')[0]))
+    # sim.run_tapcsma()
+
+    set_trace()

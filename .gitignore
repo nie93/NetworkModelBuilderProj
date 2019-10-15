@@ -1,0 +1,6 @@
+*.pdf
+*.pyc
+*.o
+__pychache__
+.vscode
+c/Makefile

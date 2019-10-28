@@ -19,14 +19,6 @@ using namespace std;
 
 #ifdef LIBXML_TREE_ENABLED
 
-/**
- * print_element_names:
- * @a_node: the initial xml node to consider.
- *
- * Prints the names of the all the xml elements
- * that are siblings or children of a given xml node.
- */
-
 
 static void 
 print_attribute_names(xmlAttr * a_attr)
@@ -45,6 +37,44 @@ print_dev_info(xmlNode * a_node) {
     print_attribute_names(attr);
 }
 
+const xmlChar *
+get_uuid(xmlNode * a_node) {
+    xmlAttr *attr = a_node->properties;
+    xmlAttr *cur_attr = NULL;
+    xmlChar *uuid = NULL;
+    for (cur_attr = attr; cur_attr; cur_attr = cur_attr->next) {
+        if (xmlStrEqual(cur_attr->name, (xmlChar *) "uuid"))
+        uuid = cur_attr->children->content;
+    }
+    return uuid;
+}
+
+const xmlChar *
+get_ap(xmlNode * a_node) {
+    xmlAttr *attr = a_node->properties;
+    xmlAttr *cur_attr = NULL;
+    xmlChar *ap = NULL;
+    for (cur_attr = attr; cur_attr; cur_attr = cur_attr->next) {
+        if (xmlStrEqual(cur_attr->name, (xmlChar *) "ap"))
+        ap = cur_attr->children->content;
+    }
+    return ap;
+}
+
+
+static vector<xmlNode *> 
+get_dev_related(vector<xmlNode *> elem, xmlNode *dev) {
+    vector<xmlNode *> elems;
+    const xmlChar *devuuid = get_uuid(dev);
+    for (unsigned int i=0; i<elem.size(); i++) {
+        xmlNode *subelem = elem.at(i);
+        const xmlChar *subelem_ap = get_ap(subelem);
+        if ((subelem_ap != NULL) & (xmlStrEqual(devuuid, subelem_ap))) {
+            elems.push_back(subelem);
+        }
+    }
+    return elems;
+}
 
 static void
 print_element_names(xmlNode * a_node)
@@ -86,6 +116,35 @@ get_devices_list(xmlNode * a_node) {
     return names;
 }
 
+
+static vector<xmlNode *> 
+get_dev_cluster_by_router(xmlNode * r, xmlNode * root) {
+    vector<xmlNode *> cluster;
+    cluster.push_back(r);
+    vector<xmlNode *> comm = get_childrens(root);
+    vector<xmlNode *> switches, hosts, ieds;
+    switches = get_childrens(comm.at(1));
+    hosts    = get_childrens(comm.at(2));
+    ieds     = get_childrens(comm.at(3));    
+    
+    vector<xmlNode *> selsw = get_dev_related(switches, r);
+
+    for (unsigned int i=0; i<selsw.size(); i++) {
+        vector<xmlNode *> selho = get_dev_related(hosts, selsw.at(i));
+        vector<xmlNode *> selie = get_dev_related(ieds, selsw.at(i));
+        cluster.insert(cluster.end(), selho.begin(), selho.end());
+        cluster.insert(cluster.end(), selie.begin(), selie.end());
+    }
+    return cluster;
+}
+
+static void
+print_dev_vector(vector<xmlNode *> v){
+    for (unsigned int i=0; i<v.size(); i++) {
+        print_dev_info(v.at(i));
+    }
+}
+
 static void
 print_vector(vector<string> v) {
     for (unsigned int i=0; i < v.size(); i++) {
@@ -117,8 +176,7 @@ main(int argc, char **argv)
     xmlDoc *doc = NULL;
     vector<string> devNames;
     xmlNode *xmlroot = NULL;
-    vector<xmlNode *> elem;
-    vector<xmlNode *> routers, switches, hosts, ieds;
+    vector<xmlNode *> commdevs, routers;
 
     if (argc != 2)
         return(1);
@@ -130,43 +188,23 @@ main(int argc, char **argv)
 
     /*Get the root element node */
     xmlroot  = xmlDocGetRootElement(doc);
-    elem     = get_childrens(xmlroot);
-    routers  = get_childrens(elem.at(0));
-    switches = get_childrens(elem.at(1));
-    hosts    = get_childrens(elem.at(2));
-    ieds     = get_childrens(elem.at(3));    
+    commdevs = get_childrens(xmlroot);
+    routers  = get_childrens(commdevs.at(0));
 
-    for (unsigned int i=0; i<routers.size(); i++) {
-        xmlNode *dev = routers.at(i);
-        printf("--- ROUTER #%d\n", i);
-        print_dev_info(dev);
-    }
+    vector<xmlNode *> devclus_r;
+    devclus_r = get_dev_cluster_by_router(routers.at(0), xmlroot);
+    print_dev_vector(devclus_r);
 
-    for (unsigned int i=0; i<switches.size(); i++) {
-        xmlNode *dev = switches.at(i);
-        printf("--- SWITCH #%d\n", i);
-        print_dev_info(dev);
-    }
     
-    for (unsigned int i=0; i<hosts.size(); i++) {
-        xmlNode *dev = hosts.at(i);
-        printf("--- HOST #%d\n", i);
-        print_dev_info(dev);
-    }
-    
-    for (unsigned int i=0; i<ieds.size(); i++) {
-        xmlNode *dev = ieds.at(i);
-        printf("--- IED #%d\n", i);
-        print_dev_info(dev);
-    }
     
     vector<string> deviceList = get_devices_list(xmlroot->children);
-    // print_vector(deviceList);
 
-    printf("     Number of elements in root: %lu\n", xmlChildElementCount(xmlroot));
+    printf("---\n     Number of elements in root: %lu\n", xmlChildElementCount(xmlroot));
+    print_vector(deviceList);
+
+
+
     
-    // devnode = devsnode->children->next;
-    // print_element_names(devsnode);
     xmlFreeDoc(doc);
     xmlCleanupParser();
 

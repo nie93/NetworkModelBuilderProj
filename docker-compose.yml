@@ -1,0 +1,8 @@
+version: "2"
+services:
+  helics-ns3:
+    image: ns3-helics:latest
+    container_name: myns3
+    network_mode: "host"
+    volumes:
+      - ./grid-sandbox-comm/scratch:/ns-3-dev/scratch

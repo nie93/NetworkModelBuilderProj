@@ -1,0 +1,6 @@
+# -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+    obj = bld.create_ns3_program('power-sys-apps-example', ['power-sys-apps'])
+    obj.source = 'power-sys-apps-example.cc'
+

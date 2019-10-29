@@ -1,0 +1,47 @@
+FROM ns3:latest
+
+LABEL Maintainer="Dexin Wang <dexin.wang@pnnl.gov>" 
+LABEL Name=ns3-helics Version=0.0.1
+LABEL Description="Docker image for NS-3 working with HELICS"
+
+USER root
+RUN apt-get -y update && apt-get install -y \
+    libboost-dev \
+    libboost-test-dev \
+    libzmq5-dev \
+    python3-dev \
+    swig \
+    cmake \
+    git
+
+WORKDIR /
+RUN git clone https://github.com/GMLC-TDC/HELICS
+WORKDIR /HELICS/build
+RUN cmake 
+RUN cmake \
+  -DBUILD_PYTHON_INTERFACE=ON \
+  -DPYTHON_INCLUDE_DIR=/usr/include/python3.6/ \
+  -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so \
+  -DJSONCPP_OBJLIB=ON \
+  ..
+# RUN ccmake . # optional, to change install path or other configuration settings
+RUN make -j2 && make install
+
+WORKDIR /ns-3-dev/
+# RUN git clone https://github.com/GMLC-TDC/helics-ns3 contrib/helics
+COPY ./helics-ns3 /ns-3-dev/contrib/helics
+RUN sed -i 's/void HandleRead/virtual void HandleRead/' src/applications/model/packet-sink.h
+
+WORKDIR /ns-3-dev/src
+RUN ./create-module.py power-sys-apps
+WORKDIR /ns-3-dev/
+RUN ./waf configure --with-helics=/usr/local --disable-werror
+RUN ./waf build
+
+EXPOSE 23404-23405
+
+COPY ./grid-sandbox-comm/power-sys-apps /ns-3-dev/src/power-sys-apps
+COPY ./grid-sandbox-comm/scratch /ns-3-dev/scratch
+RUN ./waf
+
+CMD sleep infinity

@@ -173,15 +173,13 @@ public:
 int
 main(int argc, char **argv)
 {
+    const char *xmlfilepath = "/ns-3-dev/scratch/networkbuilder.xml";
     xmlDoc *doc = NULL;
     vector<string> devNames;
     xmlNode *xmlroot = NULL;
     vector<xmlNode *> commdevs, routers;
 
-    if (argc != 2)
-        return(1);
-
-    doc = xmlReadFile(argv[1], NULL, 0);
+    doc = xmlReadFile(xmlfilepath, NULL, 0);
     if (doc == NULL) {
         printf("error: could not parse file %s\n", argv[1]);
     }

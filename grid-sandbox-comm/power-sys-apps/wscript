@@ -1,0 +1,49 @@
+# -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+# def options(opt):
+#     pass
+
+# def configure(conf):
+#     conf.check_nonfatal(header_name='stdint.h', define_name='HAVE_STDINT_H')
+
+def build(bld):
+    module = bld.create_ns3_module('power-sys-apps', ['core', 'applications','helics'])
+    module.source = [
+        'model/pmu-app.cc',
+        'model/pmu-helics-app.cc',
+        'model/helics-publication-app.cc',
+        'model/pmu-frame-structure.cc',
+        'model/pdc-app.cc',
+        'model/test-pdc.cc',
+        'helper/power-sys-apps-helper.cc',
+        'helper/pmu-helper.cc',
+        'helper/pdc-helper.cc',
+        'helper/test-pdc-helper.cc'
+        ]
+
+    module_test = bld.create_ns3_module_test_library('power-sys-apps')
+    module_test.source = [
+        'test/power-sys-apps-test-suite.cc',
+        ]
+
+    headers = bld(features='ns3header')
+    headers.module = 'power-sys-apps'
+    headers.source = [
+        'model/power-sys-apps.h',
+        'model/pmu-app.h',
+        'model/pdc-app.h',
+        'model/test-pdc.h',
+        'model/pmu-helics-app.h',
+        'model/helics-publication-app.h',
+        'model/pmu-frame-structure.h',
+        'helper/power-sys-apps-helper.h',
+        'helper/pmu-helper.h',
+        'helper/pdc-helper.h',
+        'helper/test-pdc-helper.h'
+        ]
+
+    if bld.env.ENABLE_EXAMPLES:
+        bld.recurse('examples')
+
+    # bld.ns3_python_bindings()
+

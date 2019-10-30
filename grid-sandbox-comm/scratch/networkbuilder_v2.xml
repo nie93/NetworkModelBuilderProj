@@ -1,0 +1,227 @@
+<?xml version="1.0" ?>
+<Communication>
+  <Substations>
+    <Substation name="Bus_1_____HV">
+      <Router location="Bus_1_____HV" name="Router" uuid="5d293ad3-b4f7-44e1-8e5c-4b1556ec4a5e"/>
+      <Switches>
+        <Switch ap="5d293ad3-b4f7-44e1-8e5c-4b1556ec4a5e" name="S1" uuid="6c0dbabd-1cfa-4de0-9b2d-50925562b948"/>
+        <Switch ap="5d293ad3-b4f7-44e1-8e5c-4b1556ec4a5e" name="S2" uuid="52561cef-68ed-45e7-92d8-b4b4185611d3"/>
+      </Switches>
+      <Hosts>
+        <Host ap="6c0dbabd-1cfa-4de0-9b2d-50925562b948" name="Engineer Workstation" uuid="5a4a2a25-43c4-4fb5-a729-2db63b11e88e"/>
+        <Host ap="6c0dbabd-1cfa-4de0-9b2d-50925562b948" name="Control Server" uuid="f1d0dfa2-9eb5-4da2-832f-bc6e51b44e35"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="52561cef-68ed-45e7-92d8-b4b4185611d3" farend="None" name="Relay 001-002" nearend="None" uuid="db711778-62c5-4c35-88d4-7f5f6f35d9a0"/>
+        <Relay ap="52561cef-68ed-45e7-92d8-b4b4185611d3" farend="None" name="Relay 001-005" nearend="None" uuid="8d64427c-0f0d-4f36-827e-0382ef753aeb"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_2_____HV">
+      <Router location="Bus_2_____HV" name="Router" uuid="c2b10cf1-83ce-4f77-99f5-2995745f435e"/>
+      <Switches>
+        <Switch ap="c2b10cf1-83ce-4f77-99f5-2995745f435e" name="S1" uuid="944b6949-6dab-4224-9642-00851539ac8e"/>
+        <Switch ap="c2b10cf1-83ce-4f77-99f5-2995745f435e" name="S2" uuid="814a8dcf-8973-414e-a3c2-b24143e7de2a"/>
+      </Switches>
+      <Hosts>
+        <Host ap="944b6949-6dab-4224-9642-00851539ac8e" name="Engineer Workstation" uuid="a3c97300-cd42-4695-aba1-66de6f9dc371"/>
+        <Host ap="944b6949-6dab-4224-9642-00851539ac8e" name="Control Server" uuid="16446d1b-b84e-49b7-b971-4c10ff63c4f0"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="814a8dcf-8973-414e-a3c2-b24143e7de2a" farend="None" name="Relay 001-002" nearend="None" uuid="5b5fceef-a3e7-4340-92f8-d699968d2d37"/>
+        <Relay ap="814a8dcf-8973-414e-a3c2-b24143e7de2a" farend="None" name="Relay 002-003" nearend="None" uuid="be25a990-4847-438b-81d2-36c6ba704ad9"/>
+        <Relay ap="814a8dcf-8973-414e-a3c2-b24143e7de2a" farend="None" name="Relay 002-004" nearend="None" uuid="94d83a3f-b789-4f1a-bf6a-4951f7c449b2"/>
+        <Relay ap="814a8dcf-8973-414e-a3c2-b24143e7de2a" farend="None" name="Relay 002-005" nearend="None" uuid="2b80cd64-579b-48c4-97a4-c9f13d22ca67"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_3_____HV">
+      <Router location="Bus_3_____HV" name="Router" uuid="75c61a4d-3ce3-4625-8f92-b5f530112258"/>
+      <Switches>
+        <Switch ap="75c61a4d-3ce3-4625-8f92-b5f530112258" name="S1" uuid="71745d7e-e2ab-4194-b0c2-17343323c84b"/>
+        <Switch ap="75c61a4d-3ce3-4625-8f92-b5f530112258" name="S2" uuid="9a58e3bc-1cfb-4857-936c-1d44d2a9f16e"/>
+      </Switches>
+      <Hosts>
+        <Host ap="71745d7e-e2ab-4194-b0c2-17343323c84b" name="Engineer Workstation" uuid="bd7d3b2c-5f1c-4049-984a-46f8f88a9309"/>
+        <Host ap="71745d7e-e2ab-4194-b0c2-17343323c84b" name="Control Server" uuid="122d59cd-647e-42b0-8e6a-8c5361126bb5"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="9a58e3bc-1cfb-4857-936c-1d44d2a9f16e" farend="None" name="Relay 002-003" nearend="None" uuid="0ddfe099-a8ab-446c-a161-eae819411ee0"/>
+        <Relay ap="9a58e3bc-1cfb-4857-936c-1d44d2a9f16e" farend="None" name="Relay 003-004" nearend="None" uuid="5d8f135e-0d74-4927-b4da-8f0a788e97cc"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_4_____HV">
+      <Router location="Bus_4_____HV" name="Router" uuid="16f74cb4-eb38-4333-bbb5-ee6458a12404"/>
+      <Switches>
+        <Switch ap="16f74cb4-eb38-4333-bbb5-ee6458a12404" name="S1" uuid="a7c693a0-4f0c-4968-8a36-85615686eadb"/>
+        <Switch ap="16f74cb4-eb38-4333-bbb5-ee6458a12404" name="S2" uuid="23ea0217-38e5-4839-a3d3-ecd5d04efad3"/>
+      </Switches>
+      <Hosts>
+        <Host ap="a7c693a0-4f0c-4968-8a36-85615686eadb" name="Engineer Workstation" uuid="61748165-d540-4124-b023-06eb649f62f8"/>
+        <Host ap="a7c693a0-4f0c-4968-8a36-85615686eadb" name="Control Server" uuid="9048d258-a42a-4901-b96d-dca5c8755afb"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="23ea0217-38e5-4839-a3d3-ecd5d04efad3" farend="None" name="Relay 002-004" nearend="None" uuid="f006804f-c32a-4039-abe6-30ec53044ac1"/>
+        <Relay ap="23ea0217-38e5-4839-a3d3-ecd5d04efad3" farend="None" name="Relay 003-004" nearend="None" uuid="1fd3cca8-c2bf-44b0-80d0-74b580b4331e"/>
+        <Relay ap="23ea0217-38e5-4839-a3d3-ecd5d04efad3" farend="None" name="Relay 004-005" nearend="None" uuid="1d47c655-a94a-4c99-9d11-73b74e310eaa"/>
+        <Relay ap="23ea0217-38e5-4839-a3d3-ecd5d04efad3" farend="None" name="Relay 004-007" nearend="None" uuid="9960d9d6-9536-4cdc-bfc3-161ce30270fc"/>
+        <Relay ap="23ea0217-38e5-4839-a3d3-ecd5d04efad3" farend="None" name="Relay 004-009" nearend="None" uuid="490480bd-2a56-44ef-b3a6-31661d6cb065"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_5_____HV">
+      <Router location="Bus_5_____HV" name="Router" uuid="e0e6584c-7a69-4394-b9f0-a2c9286e915d"/>
+      <Switches>
+        <Switch ap="e0e6584c-7a69-4394-b9f0-a2c9286e915d" name="S1" uuid="40e3ff24-9b41-4d9c-8172-3f8b3001f24b"/>
+        <Switch ap="e0e6584c-7a69-4394-b9f0-a2c9286e915d" name="S2" uuid="876ffac0-b31e-4f0c-af9b-069c639ab762"/>
+      </Switches>
+      <Hosts>
+        <Host ap="40e3ff24-9b41-4d9c-8172-3f8b3001f24b" name="Engineer Workstation" uuid="81e756e0-e3e4-4769-a693-d20baf4ae115"/>
+        <Host ap="40e3ff24-9b41-4d9c-8172-3f8b3001f24b" name="Control Server" uuid="318eb0ed-c075-4e47-9e16-813295180efe"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="876ffac0-b31e-4f0c-af9b-069c639ab762" farend="None" name="Relay 001-005" nearend="None" uuid="001b9dd5-27c1-4b69-a742-82567dce01d3"/>
+        <Relay ap="876ffac0-b31e-4f0c-af9b-069c639ab762" farend="None" name="Relay 002-005" nearend="None" uuid="e205f570-5fa6-4522-847b-ed461c5d40b5"/>
+        <Relay ap="876ffac0-b31e-4f0c-af9b-069c639ab762" farend="None" name="Relay 004-005" nearend="None" uuid="4a9cae33-907c-4c30-875a-c741a4c72535"/>
+        <Relay ap="876ffac0-b31e-4f0c-af9b-069c639ab762" farend="None" name="Relay 005-006" nearend="None" uuid="77839abc-db76-47de-978d-4afdbc556555"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_6_____LV">
+      <Router location="Bus_6_____LV" name="Router" uuid="966110ca-2e3b-4ce1-b811-3aa52c15ee86"/>
+      <Switches>
+        <Switch ap="966110ca-2e3b-4ce1-b811-3aa52c15ee86" name="S1" uuid="95333f54-04fa-438a-be7c-b3a469d6f798"/>
+        <Switch ap="966110ca-2e3b-4ce1-b811-3aa52c15ee86" name="S2" uuid="e39245c5-d6d1-4616-aaea-00540a0b18c3"/>
+      </Switches>
+      <Hosts>
+        <Host ap="95333f54-04fa-438a-be7c-b3a469d6f798" name="Engineer Workstation" uuid="073585f9-897d-4c75-a8b4-e26c2b63c110"/>
+        <Host ap="95333f54-04fa-438a-be7c-b3a469d6f798" name="Control Server" uuid="51a650dd-181c-4de6-8635-92e98125ce68"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="e39245c5-d6d1-4616-aaea-00540a0b18c3" farend="None" name="Relay 005-006" nearend="None" uuid="9bd4017b-7f07-4b91-bfc4-99df2f083c2f"/>
+        <Relay ap="e39245c5-d6d1-4616-aaea-00540a0b18c3" farend="None" name="Relay 006-011" nearend="None" uuid="1588c58f-149d-41af-a440-d4b0b6a3a2b0"/>
+        <Relay ap="e39245c5-d6d1-4616-aaea-00540a0b18c3" farend="None" name="Relay 006-012" nearend="None" uuid="d18757a9-edd9-4aef-a983-995112398b1d"/>
+        <Relay ap="e39245c5-d6d1-4616-aaea-00540a0b18c3" farend="None" name="Relay 006-013" nearend="None" uuid="f61a0dbc-4e89-44bb-a9b2-d09c8547bf02"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_7_____ZV">
+      <Router location="Bus_7_____ZV" name="Router" uuid="987be0e2-4c6d-4e8f-bae5-1253f9aff77e"/>
+      <Switches>
+        <Switch ap="987be0e2-4c6d-4e8f-bae5-1253f9aff77e" name="S1" uuid="7cb3a4ce-d52c-4301-87c4-b0fa89aaae6c"/>
+        <Switch ap="987be0e2-4c6d-4e8f-bae5-1253f9aff77e" name="S2" uuid="ceb21a6e-6c7f-4438-9dd0-f3c70ffd2bec"/>
+      </Switches>
+      <Hosts>
+        <Host ap="7cb3a4ce-d52c-4301-87c4-b0fa89aaae6c" name="Engineer Workstation" uuid="da617574-096b-4663-9eaa-1410d323293b"/>
+        <Host ap="7cb3a4ce-d52c-4301-87c4-b0fa89aaae6c" name="Control Server" uuid="8db8994b-2aef-4219-91c6-1e016c3943fd"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="ceb21a6e-6c7f-4438-9dd0-f3c70ffd2bec" farend="None" name="Relay 004-007" nearend="None" uuid="5b9dba5f-ad7f-4447-b298-f9ef174a6d40"/>
+        <Relay ap="ceb21a6e-6c7f-4438-9dd0-f3c70ffd2bec" farend="None" name="Relay 007-008" nearend="None" uuid="3e3bbddd-ffa4-4038-9b2d-e65ce1fc3836"/>
+        <Relay ap="ceb21a6e-6c7f-4438-9dd0-f3c70ffd2bec" farend="None" name="Relay 007-009" nearend="None" uuid="3127592a-2ff0-4c3a-8dd4-da0dfc4c3186"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_8_____TV">
+      <Router location="Bus_8_____TV" name="Router" uuid="ef7e5e38-42f8-42ea-b158-18926af20354"/>
+      <Switches>
+        <Switch ap="ef7e5e38-42f8-42ea-b158-18926af20354" name="S1" uuid="4551f8f1-6e18-466f-8147-ab0b9619f365"/>
+        <Switch ap="ef7e5e38-42f8-42ea-b158-18926af20354" name="S2" uuid="3a27ecfc-5d67-4b43-a06c-787ddcff9f2f"/>
+      </Switches>
+      <Hosts>
+        <Host ap="4551f8f1-6e18-466f-8147-ab0b9619f365" name="Engineer Workstation" uuid="c624a0a6-4440-411c-a490-88a8f0d34879"/>
+        <Host ap="4551f8f1-6e18-466f-8147-ab0b9619f365" name="Control Server" uuid="da682fce-1ca5-475a-bfb6-73e957288a88"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="3a27ecfc-5d67-4b43-a06c-787ddcff9f2f" farend="None" name="Relay 007-008" nearend="None" uuid="7449b201-3432-4bd6-9b53-064cbf88461a"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_9_____LV">
+      <Router location="Bus_9_____LV" name="Router" uuid="dea61008-174d-48a0-a19b-79706707799f"/>
+      <Switches>
+        <Switch ap="dea61008-174d-48a0-a19b-79706707799f" name="S1" uuid="12529112-f2fe-48f4-85d8-b025ead5da7d"/>
+        <Switch ap="dea61008-174d-48a0-a19b-79706707799f" name="S2" uuid="e84db4f1-bcc7-4b54-ad19-de8064a83d95"/>
+      </Switches>
+      <Hosts>
+        <Host ap="12529112-f2fe-48f4-85d8-b025ead5da7d" name="Engineer Workstation" uuid="0b1df3a6-be0e-47ee-a395-2ca53ee18013"/>
+        <Host ap="12529112-f2fe-48f4-85d8-b025ead5da7d" name="Control Server" uuid="95a4ddd5-d709-4a67-a6b5-fb3ea3cbc762"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="e84db4f1-bcc7-4b54-ad19-de8064a83d95" farend="None" name="Relay 004-009" nearend="None" uuid="7f061255-30bc-4c76-98d5-e439b6b6d82b"/>
+        <Relay ap="e84db4f1-bcc7-4b54-ad19-de8064a83d95" farend="None" name="Relay 007-009" nearend="None" uuid="e0766e53-d021-4945-a032-0da701ff91b4"/>
+        <Relay ap="e84db4f1-bcc7-4b54-ad19-de8064a83d95" farend="None" name="Relay 009-010" nearend="None" uuid="85b47a5a-14d0-4f18-950c-a7acb1a8cb64"/>
+        <Relay ap="e84db4f1-bcc7-4b54-ad19-de8064a83d95" farend="None" name="Relay 009-014" nearend="None" uuid="32e96277-4e30-411d-821e-16b3afda0f5a"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_10____LV">
+      <Router location="Bus_10____LV" name="Router" uuid="4f4d981b-8e1a-464e-a7f1-9707724f12dc"/>
+      <Switches>
+        <Switch ap="4f4d981b-8e1a-464e-a7f1-9707724f12dc" name="S1" uuid="9d85f782-b336-453c-9355-c884ff352a4a"/>
+        <Switch ap="4f4d981b-8e1a-464e-a7f1-9707724f12dc" name="S2" uuid="9570083c-21c6-40f6-8c61-83e5e6380d69"/>
+      </Switches>
+      <Hosts>
+        <Host ap="9d85f782-b336-453c-9355-c884ff352a4a" name="Engineer Workstation" uuid="9ad3ef09-a125-4bca-951b-f06615421675"/>
+        <Host ap="9d85f782-b336-453c-9355-c884ff352a4a" name="Control Server" uuid="ee860efb-d2f0-4920-b31b-4ab9c7d1a2be"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="9570083c-21c6-40f6-8c61-83e5e6380d69" farend="None" name="Relay 009-010" nearend="None" uuid="4fefd0c0-c897-4bae-8b1e-8648f65d9225"/>
+        <Relay ap="9570083c-21c6-40f6-8c61-83e5e6380d69" farend="None" name="Relay 010-011" nearend="None" uuid="3458f9a0-249b-4b51-84f0-2b2110ba2f94"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_11____LV">
+      <Router location="Bus_11____LV" name="Router" uuid="18f54bd8-55ea-4806-8d65-b4b9229f9c25"/>
+      <Switches>
+        <Switch ap="18f54bd8-55ea-4806-8d65-b4b9229f9c25" name="S1" uuid="663a4ac6-8d37-44ca-8d7e-566d7db94e4f"/>
+        <Switch ap="18f54bd8-55ea-4806-8d65-b4b9229f9c25" name="S2" uuid="0a588f98-a914-4dfb-8c03-56323ee84e3c"/>
+      </Switches>
+      <Hosts>
+        <Host ap="663a4ac6-8d37-44ca-8d7e-566d7db94e4f" name="Engineer Workstation" uuid="30f51e26-5b2a-43e2-b105-3bb4fbb88da3"/>
+        <Host ap="663a4ac6-8d37-44ca-8d7e-566d7db94e4f" name="Control Server" uuid="7ee91a6d-778d-4601-8af4-46710cf9170c"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="0a588f98-a914-4dfb-8c03-56323ee84e3c" farend="None" name="Relay 006-011" nearend="None" uuid="eac422c8-900b-4a93-a40c-36b24a111680"/>
+        <Relay ap="0a588f98-a914-4dfb-8c03-56323ee84e3c" farend="None" name="Relay 010-011" nearend="None" uuid="87f5468a-08bd-4932-a06f-08671258790e"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_12____LV">
+      <Router location="Bus_12____LV" name="Router" uuid="b2e8764c-af64-4d5d-8817-198661494a0b"/>
+      <Switches>
+        <Switch ap="b2e8764c-af64-4d5d-8817-198661494a0b" name="S1" uuid="9b1eb872-c4c4-4429-a344-900cf13fd901"/>
+        <Switch ap="b2e8764c-af64-4d5d-8817-198661494a0b" name="S2" uuid="6230e5a0-b484-4d09-bf88-5318dfb0cbed"/>
+      </Switches>
+      <Hosts>
+        <Host ap="9b1eb872-c4c4-4429-a344-900cf13fd901" name="Engineer Workstation" uuid="aba7e6b4-e6e9-40a8-82a5-20dc139c7771"/>
+        <Host ap="9b1eb872-c4c4-4429-a344-900cf13fd901" name="Control Server" uuid="12796a4e-5ca0-4dc7-80e3-eb37d164d84d"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="6230e5a0-b484-4d09-bf88-5318dfb0cbed" farend="None" name="Relay 006-012" nearend="None" uuid="a816fba7-abb3-47e1-8290-d8d83a5d895e"/>
+        <Relay ap="6230e5a0-b484-4d09-bf88-5318dfb0cbed" farend="None" name="Relay 012-013" nearend="None" uuid="eafd6973-2619-46f4-8197-7d13068dec40"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_13____LV">
+      <Router location="Bus_13____LV" name="Router" uuid="3c23ffcd-f099-4cf2-9178-8984d34d0c86"/>
+      <Switches>
+        <Switch ap="3c23ffcd-f099-4cf2-9178-8984d34d0c86" name="S1" uuid="dcbe8407-1484-4f65-b466-0f04cedcc0df"/>
+        <Switch ap="3c23ffcd-f099-4cf2-9178-8984d34d0c86" name="S2" uuid="8bf3d6f4-065f-4036-9714-a6285b0a6d75"/>
+      </Switches>
+      <Hosts>
+        <Host ap="dcbe8407-1484-4f65-b466-0f04cedcc0df" name="Engineer Workstation" uuid="8dd90022-e087-4a85-8bfd-06d7fb16e810"/>
+        <Host ap="dcbe8407-1484-4f65-b466-0f04cedcc0df" name="Control Server" uuid="1a7a158c-ef0d-489b-a72d-d8b0e4719fb7"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="8bf3d6f4-065f-4036-9714-a6285b0a6d75" farend="None" name="Relay 006-013" nearend="None" uuid="b6156023-372e-4821-9192-5ef7efdca339"/>
+        <Relay ap="8bf3d6f4-065f-4036-9714-a6285b0a6d75" farend="None" name="Relay 012-013" nearend="None" uuid="33f20e3c-80b5-418a-8c3d-3a2785d3d655"/>
+        <Relay ap="8bf3d6f4-065f-4036-9714-a6285b0a6d75" farend="None" name="Relay 013-014" nearend="None" uuid="add4b6e3-ac39-4451-bce1-0e7b0fa6ee0e"/>
+      </IEDs>
+    </Substation>
+    <Substation name="Bus_14____LV">
+      <Router location="Bus_14____LV" name="Router" uuid="1ea09010-a6a1-4a2f-a01b-ed325e0397c9"/>
+      <Switches>
+        <Switch ap="1ea09010-a6a1-4a2f-a01b-ed325e0397c9" name="S1" uuid="60a3052f-01ec-4cb7-89e2-b745e7715737"/>
+        <Switch ap="1ea09010-a6a1-4a2f-a01b-ed325e0397c9" name="S2" uuid="e4af5214-596b-4b98-96d3-f84e01f3439d"/>
+      </Switches>
+      <Hosts>
+        <Host ap="60a3052f-01ec-4cb7-89e2-b745e7715737" name="Engineer Workstation" uuid="020222a9-f2f8-420f-a064-6275c5241f84"/>
+        <Host ap="60a3052f-01ec-4cb7-89e2-b745e7715737" name="Control Server" uuid="ee03cf6c-5734-47fa-9ed6-4c4fcedc8706"/>
+      </Hosts>
+      <IEDs>
+        <Relay ap="e4af5214-596b-4b98-96d3-f84e01f3439d" farend="None" name="Relay 009-014" nearend="None" uuid="3ad7f9d9-e0ab-49ab-a669-2989cc96953b"/>
+        <Relay ap="e4af5214-596b-4b98-96d3-f84e01f3439d" farend="None" name="Relay 013-014" nearend="None" uuid="2a2f1381-576b-4c86-ad19-62cd88cc2f0c"/>
+      </IEDs>
+    </Substation>
+  </Substations>
+</Communication>

@@ -1,0 +1,98 @@
+    // ----------------------------------------------------------------------
+    // Default values for command line arguments
+    // ----------------------------------------------------------------------
+    bool        verbose              = true;
+
+    int         simDurationSeconds   = 60;
+ 
+    bool        enableUdpMultiSW     = true;
+    bool        enableUdpSingleSW    = true;
+ 
+    std::string pcapLocations        = "";
+    uint32_t    snapLen              = PcapFile::SNAPLEN_DEFAULT;
+ 
+    std::string csmaXLinkDataRate    = "100Mbps";
+    std::string csmaXLinkDelay       = "500ns";
+ 
+    std::string csmaYLinkDataRate    = "10Mbps";
+    std::string csmaYLinkDelay       = "500ns";
+ 
+    std::string p2pLinkDataRate      = "5Mbps";
+    std::string p2pLinkDelay         = "50ms";
+ 
+    uint16_t    udpEchoPort          = 9;  // The well-known UDP echo port
+
+
+    // ======================================================================
+    // Create the nodes & links required for the topology shown in comments above.
+    // ----------------------------------------------------------------------
+    NS_LOG_INFO ("INFO: Create nodes.");    // - - - - - - - - - - - - - - - -
+                                            // Node IP     : Description
+                                            // - - - - - - - - - - - - - - - -
+                                            //             :
+    Ptr<Node> tr  = CreateObject<Node> ();  // 192.168.1.1 : Router connecting top LAN & WAN
+                                            // 76.1.1.1    :
+                                            //             :
+    Ptr<Node> ts1 = CreateObject<Node> ();  // <no IP>     : Top switch #1 (bridge)
+    Ptr<Node> ts2 = CreateObject<Node> ();  // <no IP>     : Top switch #2 (bridge)
+    Ptr<Node> t2  = CreateObject<Node> ();  // 192.168.1.2 : Top multi-switch udp echo client
+    Ptr<Node> t3  = CreateObject<Node> ();  // 192.168.1.3 : Top single-switch   udp echo server
+
+
+    Ptr<Node> br  = CreateObject<Node> ();  // 76.1.1.2    : Router connecting WAN & bottom LANs
+                                            // 192.168.2.1 :
+                                            //            
+    Ptr<Node> bs1 = CreateObject<Node> ();  // <no IP>     : Bottom switch #1 (bridge)
+    Ptr<Node> bs2 = CreateObject<Node> ();  // <no IP>     : Bottom switch #2 (bridge)
+    Ptr<Node> b2  = CreateObject<Node> ();  // 192.168.2.2 : Bottom multi-switch udp echo server  
+    Ptr<Node> b3  = CreateObject<Node> ();  // 192.168.2.3 : Bottom single-switch   udp echo client
+//                                            //             :
+//    Ptr<Node> ts3 = CreateObject<Node> ();  // <no IP>     : Top switch #3 (bridge)
+//    Ptr<Node> ts4 = CreateObject<Node> ();  // <no IP>     : Top switch #4 (bridge) :
+//    Ptr<Node> bs3 = CreateObject<Node> ();  // <no IP>     : Bottom switch #3 (bridge)
+//    Ptr<Node> bs4 = CreateObject<Node> ();  // <no IP>     : Bottom switch #4 (bridge)
+//    Ptr<Node> bs5 = CreateObject<Node> ();  // <no IP>     : Bottom switch #5 (bridge)
+//                                            //             :
+//                                            // - - - - - - - - - - - - - - - -
+    // ----------------------------------------------------------------------
+    // Give the nodes names
+    // ----------------------------------------------------------------------
+    Names::Add ("tr",  tr);
+    Names::Add ("ts1", ts1);
+    Names::Add ("ts2", ts2);
+    Names::Add ("t2",  t2);
+    Names::Add ("t3",  t3);
+    Names::Add ("br",  br);
+    Names::Add ("bs1", bs1);
+    Names::Add ("bs2", bs2);
+    Names::Add ("b2",  b2);
+    Names::Add ("b3",  b3); 
+    
+
+    // ======================================================================
+    // Create a point-to-point link for connecting WAN nodes together
+    // (this type of link is full-duplex)
+    // ----------------------------------------------------------------------
+    NS_LOG_INFO ("L2: Create a " <<
+                 p2pLinkDataRate << " " <<
+                 p2pLinkDelay    << " Point-to-Point link for the WAN.");
+
+    PointToPointHelper p2p;
+    p2p.SetDeviceAttribute  ("DataRate", StringValue (p2pLinkDataRate));
+    p2p.SetChannelAttribute ("Delay",    StringValue (p2pLinkDelay));
+    // ----------------------------------------
+    // CSMA [X]
+    // ----------------------------------------
+    NS_LOG_INFO ("L2: Create a " <<
+                 csmaXLinkDataRate << " " <<
+                 csmaXLinkDelay << " CSMA link for csmaX for LANs.");
+    CsmaHelper csmaX;
+    csmaX.SetChannelAttribute ("DataRate", StringValue (csmaXLinkDataRate));
+    csmaX.SetChannelAttribute ("Delay",    StringValue (csmaXLinkDelay));
+    // ----------------------------------------------------------------------
+    // Now, connect top router to bottom router with a p2p WAN link
+    // ----------------------------------------------------------------------
+    NS_LOG_INFO ("L2: Connect the routers together with the Point-to-Point WAN link.");
+
+    NetDeviceContainer link_tr_br;
+    link_tr_br = p2p.Install (NodeContainer (tr,br));

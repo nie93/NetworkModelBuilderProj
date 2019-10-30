@@ -29,7 +29,7 @@ class NetworkModelBuilder():
         self.add_comm_nodes()
 
     def add_comm_nodes(self):
-        self.add_comm_routers('Main Router')
+        self.add_comm_routers('Router')
         self.add_comm_switches(['S1', 'S2'])
         self.add_comm_links_from_topology()
         self.add_comm_hosts('Engineer Workstation')
@@ -84,37 +84,60 @@ class NetworkModelBuilder():
                 tbus_router = get_router_by_location(self.CommNodes, tbus_name)
                 self.CommLinks.append((fbus_router, tbus_router))
     
+
     def xml_serialize(self, filepath):
         # create the file structure
-        root = ET.Element('Communication')
-        routers = ET.SubElement(root, 'Routers')
-        switches = ET.SubElement(root, 'Switches')
-        hosts = ET.SubElement(root, 'Hosts')
-        ieds = ET.SubElement(root, 'IEDs')
 
-        for dev in self.CommNodes:
-            if type(dev) == Router:
-                item = ET.SubElement(routers, dev.__class__.__name__)
-                item.set('name', dev.DeviceName)
-                item.set('uuid', str(dev.UUID))
-                item.set('location', dev.Location)
-            elif type(dev) == Switch:
-                item = ET.SubElement(switches, dev.__class__.__name__)
-                item.set('name', dev.DeviceName)
-                item.set('uuid', str(dev.UUID))
-                item.set('ap', str(dev.AccessPoint))
-            elif (type(dev) == Host):
-                item = ET.SubElement(hosts, dev.__class__.__name__)
-                item.set('name', dev.DeviceName)
-                item.set('uuid', str(dev.UUID))
-                item.set('ap', str(dev.AccessPoint))
-            elif (type(dev) == Relay):
-                item = ET.SubElement(ieds, dev.__class__.__name__)
-                item.set('name', dev.DeviceName)
-                item.set('uuid', str(dev.UUID))
-                item.set('ap', str(dev.AccessPoint))
-                item.set('nearend', str(dev.NearEnd))
-                item.set('farend', str(dev.FarEnd))
+        root = ET.Element('Communication')
+        substations = ET.SubElement(root, 'Substations')
+        routers = [dev for dev in self.CommNodes if type(dev) == Router]
+
+        for r in routers:
+            sub = ET.SubElement(substations, 'Substation')
+            lvl_r     = ET.SubElement(sub, 'Router')
+            lvl_sw    = ET.SubElement(sub, 'Switches')
+            lvl_hosts = ET.SubElement(sub, 'Hosts')
+            lvl_ieds  = ET.SubElement(sub, 'IEDs')
+
+            sub.set('name', r.Location)
+            lvl_r.set('name', r.DeviceName)
+            lvl_r.set('uuid', str(r.UUID))
+            lvl_r.set('location', r.Location)
+
+            devices = get_dev_related_by_router(self.CommNodes, r)
+            
+            for dev in devices:
+                if type(dev) == Switch:
+                    item = ET.SubElement(lvl_sw, dev.__class__.__name__)
+                    item.set('name', dev.DeviceName)
+                    item.set('uuid', str(dev.UUID))
+                    item.set('ap', str(dev.AccessPoint))
+                elif (type(dev) == Host):
+                    item = ET.SubElement(lvl_hosts, dev.__class__.__name__)
+                    item.set('name', dev.DeviceName)
+                    item.set('uuid', str(dev.UUID))
+                    item.set('ap', str(dev.AccessPoint))
+                elif (type(dev) == Relay):
+                    item = ET.SubElement(lvl_ieds, dev.__class__.__name__)
+                    item.set('name', dev.DeviceName)
+                    item.set('uuid', str(dev.UUID))
+                    item.set('ap', str(dev.AccessPoint))
+                    item.set('nearend', str(dev.NearEnd))
+                    item.set('farend', str(dev.FarEnd))
+
+        channels = ET.SubElement(root, 'Links')
+        for link in self.CommLinks:
+            devtypes = list(map(type, link))
+            if all(dt == Router for dt in devtypes):
+                item = ET.SubElement(channels, 'P2P')
+                item.set('DataRate', '5Mbps')
+                item.set('Delay', '50ms')
+            if any(dt == Switch for dt in devtypes):
+                item = ET.SubElement(channels, 'CSMA')
+                item.set('DataRate', '100Mbps')
+                item.set('Delay', '500ns')
+            item.set('n0', str(link[0].UUID))
+            item.set('n1', str(link[1].UUID))
 
         # create a new XML file with the results
         reparsed = minidom.parseString(ET.tostring(root, 'utf-8'))
@@ -123,6 +146,25 @@ class NetworkModelBuilder():
 
 
 # region [Common Methods]
+
+def get_dev_related_by_router(nodes, r):
+    dev = list()
+    switches = [sw for sw in get_dev_by_type(nodes, Switch) if (sw.AccessPoint == r.UUID)]
+    ap = [r.UUID]
+    ap.extend([sw.UUID for sw in switches])
+
+    
+    hosts = [dev for dev in get_dev_by_type(nodes, Host) if (dev.AccessPoint in ap)]
+    ieds = [dev for dev in get_dev_by_type(nodes, Relay) if (dev.AccessPoint in ap)]
+
+    dev.extend(switches)
+    dev.extend(hosts)
+    dev.extend(ieds)
+    return dev
+
+def get_dev_by_type(nodes, devtype):
+    return [dev for dev in nodes if type(dev) == devtype]
+
 def get_branches_connected_to_bus(branches, busid):
     return [b for b in branches if b[0] == busid or b[1] == busid]
 

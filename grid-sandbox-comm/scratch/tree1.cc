@@ -15,7 +15,27 @@
 #include <iostream>
 #include <vector>
 
+// #include "ns3/core-module.h"
+// #include "ns3/network-module.h"
+// #include "ns3/csma-module.h"
+// #include "ns3/internet-module.h"
+// #include "ns3/point-to-point-module.h"
+// #include "ns3/applications-module.h"
+// #include "ns3/ipv4-global-routing-helper.h"
+
+// #include "ns3/helics-helper.h"
+// #include "ns3/pmu-app.h"
+// #include "ns3/pmu-helics-app.h"
+// #include "ns3/helics-publication-app.h"
+// #include "ns3/pmu-helper.h"
+// #include "ns3/netanim-module.h"
+// #include "ns3/test-pdc-helper.h"
+// #include "ns3/test-pdc.h"
+// #include "ns3/flow-monitor-helper.h"
+
+// using namespace ns3;
 using namespace std;
+
 
 #ifdef LIBXML_TREE_ENABLED
 
@@ -175,30 +195,25 @@ main(int argc, char **argv)
 {
     const char *xmlfilepath = "/ns-3-dev/scratch/networkbuilder.xml";
     xmlDoc *doc = NULL;
-    vector<string> devNames;
     xmlNode *xmlroot = NULL;
     vector<xmlNode *> commdevs, routers;
 
     doc = xmlReadFile(xmlfilepath, NULL, 0);
-    if (doc == NULL) {
-        printf("error: could not parse file %s\n", argv[1]);
-    }
-
-    /*Get the root element node */
-    xmlroot  = xmlDocGetRootElement(doc);
+    xmlroot  = xmlDocGetRootElement(doc);  // Get the root element node
     commdevs = get_childrens(xmlroot);
     routers  = get_childrens(commdevs.at(0));
 
-    vector<xmlNode *> devclus_r;
-    devclus_r = get_dev_cluster_by_router(routers.at(0), xmlroot);
-    print_dev_vector(devclus_r);
+    vector<xmlNode *> devclus1, devclus2;
+    devclus1 = get_dev_cluster_by_router(routers.at(0), xmlroot);
+    devclus2 = get_dev_cluster_by_router(routers.at(1), xmlroot);
 
-    
-    
+    print_dev_vector(devclus1);
+    print_dev_vector(devclus2);
+
     vector<string> deviceList = get_devices_list(xmlroot->children);
-
     printf("---\n     Number of elements in root: %lu\n", xmlChildElementCount(xmlroot));
     print_vector(deviceList);
+
 
 
 

@@ -15,10 +15,10 @@ $(MAIN): $(SRCS)
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(OBJS) $(SRCS) $(LIBS)
 
 d:
-	gdb --args $(OBJS) ./dat/networkbuilder.xml
+	gdb $(OBJS) 
 
 r:
-	./$(OBJS) ./dat/networkbuilder.xml
+	./$(OBJS)
 
 clean:
 	$(RM) *.o *~ $(MAIN)

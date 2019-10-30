@@ -69,9 +69,3 @@ if __name__ == '__main__':
     b.build_comm()
     b.xml_serialize('%s/etc/%s/networkbuilder.xml' % (HOMEPATH, CASE.split('.')[0]))
     # visualize('%s/etc/%s/networkbuilder.pdf' % (HOMEPATH, CASE.split('.')[0]), b.CommLinks)
-
-    # sim = Ns3Simulator()
-    # sim.xml_import('%s/etc/%s/networkbuilder.xml' % (HOMEPATH, CASE.split('.')[0]))
-    # sim.run_tapcsma()
-
-    set_trace()
